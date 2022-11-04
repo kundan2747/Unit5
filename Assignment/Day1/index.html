@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll</title>
+    <style>
+        .wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        div {
+            text-align: center;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+
+
+        .wrapper div {
+            height: 100px;
+            width: 100px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        button {
+            display: block;
+            margin: auto;
+        }
+
+        .winner {
+            background-color: green;
+        }
+
+        .loser {
+            background-color: red;
+        }
+
+        .second {
+            background-color: yellow;
+        }
+
+        .draw {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="member-1">
+            <p>"A"</p>
+        </div>
+        <div id="member-2">
+            <p>"B"</p>
+        </div>
+        <div id="member-3">
+            <p>"C"</p>
+        </div>
+    </div>
+
+    <button id="roll">Roll Dice</button>
+</body>
+
+</html>
+<script>
+
+    document.getElementById("roll").addEventListener("click", rollDice)
+    function rollDice() {
+        var a = Math.floor(Math.random() * 6) + 1;
+        var b = Math.floor(Math.random() * 6) + 1;
+        var c = Math.floor(Math.random() * 6) + 1;
+        var member1 = document.querySelector("#member-1")
+        var member2 = document.querySelector("#member-2")
+        var member3 = document.querySelector("#member-3")
+
+        member1.innerText = a
+        member2.innerText = b
+        member3.innerText = c
+
+        member1.removeAttribute("class")
+        member2.removeAttribute("class")
+        member3.removeAttribute("class")
+
+        if (a > b && a > c) {
+            member1.setAttribute("class", "winner")
+
+            if (b > c) {
+                member2.setAttribute("class", "second")
+                member3.setAttribute("class", "loser")
+            }
+            else if (b < c) {
+                member2.setAttribute("class", "loser")
+                member3.setAttribute("class", "second")
+
+            }
+            else {
+                member2.setAttribute("class", "draw")
+                member3.setAttribute("class", "draw")
+            }
+
+        }
+        else if (b > a && b > c) {
+            member2.setAttribute("class", "winner")
+
+            if (a > c) {
+                member1.setAttribute("class", "second")
+                member3.setAttribute("class", "loser")
+            }
+            else if (a < c) {
+                member1.setAttribute("class", "loser")
+                member3.setAttribute("class", "second")
+
+            }
+            else {
+                member1.setAttribute("class", "draw")
+                member3.setAttribute("class", "draw")
+            }
+        }
+        else if (c > a && c > b) {
+            member3.setAttribute("class", "winner")
+
+            if (a > b) {
+                member1.setAttribute("class", "second")
+                member2.setAttribute("class", "loser")
+            }
+            else if (a < b) {
+                member1.setAttribute("class", "loser")
+                member2.setAttribute("class", "second")
+
+            }
+            else {
+                member1.setAttribute("class", "draw")
+                member2.setAttribute("class", "draw")
+            }
+        }
+        else if (a == b) {
+            member1.setAttribute("class", "draw")
+            member2.setAttribute("class", "draw")
+            if (c > a) {
+                member3.setAttribute("class", "winner")
+            }
+            else {
+                member3.setAttribute("class", "loser")
+
+            }
+
+
+        }
+        else if (a == c) {
+            member1.setAttribute("class", "draw")
+            member3.setAttribute("class", "draw")
+            if (b > a) {
+                member2.setAttribute("class", "winner")
+            }
+            else {
+                member2.setAttribute("class", "loser")
+
+            }
+
+
+        }
+        else if (b == c) {
+            member3.setAttribute("class", "draw")
+            member2.setAttribute("class", "draw")
+            if (a > c) {
+                member1.setAttribute("class", "winner")
+            }
+            else {
+                member1.setAttribute("class", "loser")
+
+            }
+
+
+        }
+        if (a == b && a == c) {
+            member1.setAttribute("class", "draw")
+            member2.setAttribute("class", "draw")
+            member3.setAttribute("class", "draw")
+
+        }
+
+    }
+
+</script>
