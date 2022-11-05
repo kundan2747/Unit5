@@ -12,6 +12,7 @@ function CreateItem(name, category, image, price, gender, sold) {
 
 function addItem() {
   event.preventDefault();
+  // alert("details submitted");
   var name = document.getElementById("name").value;
   var category = document.getElementById("category").value;
   var image = document.getElementById("image").value;
