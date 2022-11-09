@@ -58,6 +58,7 @@
 
 
     ]
+    localStorage.setItem("movies", JSON.stringify(moviesArr))
     var wrapper = document.getElementById("wrapper")
     moviesArr.map(function (ele) {
         var div = document.createElement("div")
