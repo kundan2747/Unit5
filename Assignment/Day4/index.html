@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        #wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 15%;
+        }
+
+        #wrapper div {
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        #wrapper div:hover {
+            transform: scale(1.01);
+        }
+
+
+        img {
+            width: 100%;
+            height: 350px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper"></div>
+
+</body>
+
+</html>
+<script>
+    function CreateMovie(name, date, image, rating) {
+        this.name = name,
+            this.date = date,
+            this.image = image
+        this.rating = rating
+    }
+    moviesArr = [new CreateMovie("Death Note", "2009", "images/deathnote.jpg", 9.2),
+    new CreateMovie("Attack on Titan", "2013", "images/AOT.jpg", 9),
+    new CreateMovie("Attack On Titan", "1999", "images/onepiece.jpg", 8.9),
+    new CreateMovie("Bleach", "2004", "images/Bleach.png", 8.5),
+    new CreateMovie("Demon Slayer", "2019", "images/DemonSlayer.jpg", 9.1),
+    new CreateMovie("Mob Psycho", "2009", "images/Mob_Psycho.webp", 8),
+    new CreateMovie("onepunchman", "2015", "images/onepunchman.jpg", 9),
+    new CreateMovie("Your Name", "2013", "images/yourname.jpg", 9.4),
+    new CreateMovie("Grave of Fireflies", "1980", "images/Grave.jpg", 9.1)
+
+
+
+
+    ]
+    var wrapper = document.getElementById("wrapper")
+    moviesArr.map(function (ele) {
+        var div = document.createElement("div")
+        var img = document.createElement("img")
+        var name = document.createElement("h2")
+        var date = document.createElement("h5")
+        var rating = document.createElement("h5")
+        img.setAttribute("src", ele.image)
+        name.innerText = ele.name
+        date.innerText = "Release year : " + ele.date
+        rating.innerText = "IMDB Rating : " + ele.rating
+        div.append(img, name, date, rating)
+        wrapper.append(div)
+
+
+    })
+
+</script>
