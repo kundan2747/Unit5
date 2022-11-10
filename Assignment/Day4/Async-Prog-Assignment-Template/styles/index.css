@@ -1,0 +1,33 @@
+#movies{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin: 25px 15%;
+}
+
+#movies div {
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#movies div:hover {
+transform: scale(1.01);
+}
+
+
+#movies img {
+width: 100%;
+height: 350px;
+
+}
+#slideImg{
+    width:50vw;
+    height: 600px;
+    display: block;
+    margin: auto;
+    
+}
+#slideshow{
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 10px;
+}
