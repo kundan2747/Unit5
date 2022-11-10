@@ -24,10 +24,10 @@ height: 350px;
     height: 600px;
     display: block;
     margin: auto;
+    border: 2px solid blue;
     
 }
 #slideshow{
-    background-color: rgba(0, 0, 0, 0.1);
-    margin: 5px;
-    padding: 10px;
+    background-image:  linear-gradient( rgba(0,0,0,.1), rgba(0,0,0,.1) ),url(../images/collage.jpg);
+
 }
