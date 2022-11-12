@@ -24,7 +24,6 @@ Array.prototype.myReduce = function (cb, start) {
       } else {
         ans = this[key];
       }
-    
     }
   }
   return ans;
@@ -37,5 +36,3 @@ Array.prototype.myForEach = function (cb) {
     }
   }
 };
-
-
