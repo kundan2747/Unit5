@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <style>
+        #movies {
+            display: flex;
+            gap: 10px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        #result {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Movie Search </h3>
+    <input type="text" name="" id="title">
+    <button id="search">Search</button>
+    <h3 id="result">Results</h3>
+    <div id="movies">
+
+    </div>
+</body>
+
+</html>
+<script>
+    document.getElementById("search").addEventListener("click", searchMovie)
+    function searchMovie() {
+        var title = document.getElementById("title").value
+        var mdata = fetch("http://www.omdbapi.com/?apikey=5252a49c&t=" + title)
+        mdata.then(function (res) {
+            return res.json()
+        }).then(function (res) {
+            console.log(res)
+            displayMovie(res)
+
+        }).catch(function (e) {
+            console.log(e)
+        })
+
+    }
+    function displayMovie(resData) {
+        document.querySelector("#result").style.display = "block"
+        var div = document.createElement("div")
+        var image = document.createElement("img")
+        image.src = resData.Poster
+        div.append(image)
+        document.querySelector("#movies").append(div)
+
+    }
+
+</script>
