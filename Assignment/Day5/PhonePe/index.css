@@ -44,8 +44,9 @@ i{
 #icons{
     display: flex;
     gap: 130px;
-    align-items: center;
+    margin-top: 50px;
     justify-content: center;
+
 }
 #contact{
     padding: 20px;

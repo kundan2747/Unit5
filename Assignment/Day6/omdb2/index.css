@@ -1,0 +1,39 @@
+#movies {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+#result {
+    display: none;
+    text-decoration: underline;
+}
+#movies div{
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#movies img{
+    height:300px;
+    width: 100%;
+}
+#movies div:hover{
+    transform: scale(1.1);
+    transition: all 400ms;
+}
+#movies div p{
+    text-align: center;
+    border-radius: 20px;
+}
+#movies div h3{
+    text-align: center;
+}
+#container{
+    display: flex;
+    gap: 50px;
+
+}
+#desc{
+    display: none;
+    padding: 20px;
+}
