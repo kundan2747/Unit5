@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        #list {
+            padding: 20px;
+            margin: auto;
+
+        }
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 2px;
+            text-align: center;
+        }
+
+        td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        #type {
+            margin: 5px;
+        }
+
+        select {
+            /* border: none; */
+            padding: 2px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="index.html">
+            <h3>Home</h3>
+        </a>
+        <a href="search.html">
+            <h3>Search</h3>
+        </a>
+    </div>
+    <select name="" id="type" onchange="filterdata()">
+        <option value="">Select By Type</option>
+        <option value="micro">micro</option>
+        <option value="large">large</option>
+        <option value="brewpub">brewpub</option>
+    </select>
+    <h1>All Breweries</h1>
+    <div id="list">
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Brewery Type</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Details</th>
+
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
+<script src="index.js"></script>

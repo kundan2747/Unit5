@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        input {
+            margin: 10px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        
+        th {
+            background-color: blue;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 2px;
+            text-align: center;
+        }
+
+        td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+        }
+    </style>
+</head>
+<div id="navbar">
+    <a href="index.html">
+        <h3>Home</h3>
+    </a>
+    <a href="search.html">
+        <h3>Search</h3>
+    </a>
+</div>
+<input type="text" name="" id="place" placeholder="Search By name" oninput="debounce()">
+<div id="list">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Brewery Type</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Details</th>
+
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<body>
+
+</body>
+
+</html>
+<script src="search.js"></script>

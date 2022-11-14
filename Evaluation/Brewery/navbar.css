@@ -1,0 +1,19 @@
+#navbar{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: end;
+    gap: 100px;
+    padding-right: 120px;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+a:hover{
+    color: aqua;
+    transform: scale(1.1);
+}
