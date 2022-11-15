@@ -27,6 +27,10 @@ function display(brewArr) {
     td3.innerText = ele.city;
     td4.innerText = ele.state;
     td5.innerText = "More Details";
+    td5.style.background = "green";
+    td5.style.color = "white";
+    td5.style.cursor = "pointer";
+
     td5.addEventListener("click", function () {
       gotoDetails(ele);
     });
