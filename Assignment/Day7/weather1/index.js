@@ -59,3 +59,33 @@ function displayData(weatherData) {
 
   datadiv.append(date, place, image, temp, feelslike, grid);
 }
+
+function success(pos) {
+  const crd = pos.coords;
+  console.log(crd);
+  console.log(pos);
+  var lat = crd.latitude;
+  var lon = crd.longitude;
+  console.log(lat, lon);
+  document
+    .getElementById("gmap_canvas")
+    .setAttribute(
+      "src",
+      `https://maps.google.com/maps?q="Ranchi"&center=${lat},${lon}&t=&z=13&ie=UTF8&iwloc=&output=embed`
+    );
+
+  var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=eef812bad6c430c4a8454611ef6cee98&units=metric`;
+  var res = fetch(url);
+  res
+    .then(function (resdata) {
+      return resdata.json();
+    })
+    .then(function (weatherData) {
+      displayData(weatherData);
+    })
+    .catch(() => {
+      console.log("error");
+    });
+}
+
+navigator.geolocation.getCurrentPosition(success);
