@@ -1,4 +1,4 @@
-class myArr {
+class Stack {
   constructor() {
     this.array = [];
     this.size = 0;
@@ -33,14 +33,14 @@ class myArr {
   }
 }
 
-// var arr1 = new myArr();
-// arr1.push(2);
-// arr1.push(1);
-// arr1.push(3);
-// arr1.print();
-// arr1.printReverse();
-// console.log(arr1.length());
-// arr1.pop();
-// console.log(arr1.length());
-// arr1.print();
+var arr1 = new Stack();
+arr1.push(2);
+arr1.push(1);
+arr1.push(3);
+arr1.print();
+arr1.printReverse();
+console.log(arr1.length());
+arr1.pop();
+console.log(arr1.length());
+arr1.print();
 
