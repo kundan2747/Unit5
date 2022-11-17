@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <style>
+        #movies {
+            display: flex;
+            gap: 10px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        input {
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Movie Search</h1>
+    <input type="text" id="title" oninput="debounce()" placeholder="Enter the title">
+    <div id="movies"></div>
+
+</body>
+
+</html>
+<script>
+    // document.getElementById("title").addEventListener("oninput", searchMovie)
+    function searchMovie() {
+        var title = document.getElementById("title").value
+        var mdata = fetch("http://www.omdbapi.com/?apikey=5252a49c&t=" + title)
+        mdata.then(function (res) {
+            return res.json()
+        }).then(function (res) {
+            console.log(res)
+            if (res.Error) {
+                document.getElementById("movies").innerHTML = ""
+
+
+            }
+            else {
+                displayMovie(res)
+            }
+
+        }).catch(() => {
+            console.log("catch")
+        })
+
+    }
+    function displayMovie(resData) {
+        document.getElementById("movies").innerHTML = ""
+        var div = document.createElement("div")
+        var image = document.createElement("img")
+        image.src = resData.Poster
+        div.append(image)
+        document.querySelector("#movies").append(div)
+
+    }
+    var i;
+    function debounce() {
+        if (i) {
+            clearTimeout(i)
+        }
+        i = setTimeout(() => {
+            searchMovie()
+        }, 2000)
+    }
+
+
+</script>
