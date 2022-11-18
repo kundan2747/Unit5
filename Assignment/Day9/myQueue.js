@@ -13,8 +13,7 @@ class Queue {
     } else {
       var x = this.queue[0];
       this.size -= 1;
-      delete this.queue[0];
-      return x;
+      return this.queue.shift();
     }
   }
   enQueueThree(val1, val2, val3) {
@@ -36,10 +35,16 @@ class Queue {
       console.log("Error Empty Queue");
     } else {
       var cnt = 0;
-      while (this.size > 0 && cnt < 3) delete this.queue[0];
-      cnt += 1;
-      this.size -= 1;
+      while (this.size > 0 && cnt < 3) {
+        this.queue.shift();
+        cnt += 1;
+        this.size -= 1;
+      }
     }
   }
 }
-var qu = new Queue();
+// var qu = new Queue();
+// qu.enQueue(3);
+// qu.enQueueThree(4, 5, 6);
+// qu.deQueueThree();
+
