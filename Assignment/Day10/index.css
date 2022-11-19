@@ -1,0 +1,41 @@
+button {
+    cursor: pointer;
+    padding: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+input {
+    padding: 5px;
+}
+
+table {
+    width: 100%;
+    padding: 50px;
+
+
+}
+
+th {
+    background-color: blue;
+    color: white;
+
+}
+
+th,
+td {
+    text-align: center;
+    padding: 3px;
+}
+td:last-of-type:hover{
+    background-color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
