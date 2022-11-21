@@ -1,0 +1,7 @@
+#movie{
+display: flex;
+justify-content: center;
+}
+#wallet{
+text-align: end;
+}

@@ -1,0 +1,13 @@
+#wallet{
+    text-align: end;
+    padding-right:30px ;
+  
+}
+button,input{
+    display: block;
+    margin: 20px auto;
+    
+}
+button:hover{
+    cursor: pointer;
+}
