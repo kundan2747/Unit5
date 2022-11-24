@@ -1,0 +1,20 @@
+#receipe{
+    display: block;
+    margin: 20px auto;
+    width: 30%;
+    padding: 8px;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+
+
+}
+#container div{
+    text-align: center;
+}
+img{
+    width: 350px;
+}
