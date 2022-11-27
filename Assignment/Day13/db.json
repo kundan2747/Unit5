@@ -1,0 +1,13 @@
+{
+  "blogs": [
+    {
+      "id": 3,
+      "created_date": "10/12/2022",
+      "title": "Science and technology",
+      "author": "Kundan Kumar",
+      "category": "Education",
+      "body": "jdbqk jsdnkqj shaud ",
+      "tags": "Science,technology,Education"
+    }
+  ]
+}

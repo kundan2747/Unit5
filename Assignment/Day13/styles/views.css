@@ -1,0 +1,39 @@
+#blogs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    margin :10px 50px
+}
+#blogs >div{
+    background-color: burlywood;
+    padding:0px 10px;
+    border-radius: 10px;
+    
+}
+#blogs>div >div:last-of-type{
+    /* background-color: red; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-between;
+
+}
+#blogs >div:hover{
+    transform: scale(1.05);
+    transition: all 300ms;
+}
+button{
+    /* margin: 10px; */
+    padding: 5px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#blogs h1,p{
+    text-align: center;
+} 
