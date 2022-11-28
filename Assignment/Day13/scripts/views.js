@@ -1,14 +1,18 @@
-fetch("http://localhost:3000/blogs")
-  .then((response) => {
-    return response.json();
-  })
-  .then((result) => {
-    console.log(result);
-    displayData(result);
-  });
+let getData = (url) => {
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      console.log(result);
+      displayData(result);
+    });
+};
 
+getData("http://localhost:3000/blogs");
 let displayData = (arr) => {
   var blogs = document.getElementById("blogs");
+  blogs.innerHTML = "";
   arr.forEach((element) => {
     let div = document.createElement("div");
     let divTop = document.createElement("div");
@@ -27,20 +31,25 @@ let displayData = (arr) => {
     editbtn.innerText = "EDIT";
     title.innerText = element.title;
     desc.innerText = element.body;
-    author.innerText = element.author;
-    tags.innerText = element.tags;
+    author.innerText = "Author : " + element.author;
+    tags.innerText = "Tags : " + element.tags;
     divTop.append(title);
-    divCen.append(desc);
-    divBot.append(author, tags, editbtn, delbtn, viewbtn);
+    divCen.append(desc, author, tags);
+    divBot.append(editbtn, delbtn, viewbtn);
     div.append(divTop, divCen, divBot);
     blogs.append(div);
     viewbtn.addEventListener("click", () => {
       goToBlog(element);
     });
 
-    delbtn.addEventListener("click" ,()=>{
-        delData(element.id)
-    })
+    delbtn.addEventListener("click", () => {
+      delData(element.id);
+    });
+    editbtn.addEventListener("click", () => {
+      editData(element);
+      localStorage.setItem("edit", JSON.stringify(element));
+      window.location.href = "./edit.html";
+    });
   });
 };
 
@@ -49,21 +58,28 @@ function goToBlog(ele) {
   window.location.href = "./blog.html";
 }
 
-function delData(i){
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+function delData(i) {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
 
-    
-    var requestOptions = {
-      method: 'DELETE',
-      headers: myHeaders,
-    //   body: raw,
-      redirect: 'follow'
-    };
-    
-    fetch(`http://localhost:3000/blogs/${i}`, requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+  var requestOptions = {
+    method: "DELETE",
+    headers: myHeaders,
+    redirect: "follow",
+  };
 
+  fetch(`http://localhost:3000/blogs/${i}`, requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+}
+
+var id;
+function debounce() {
+  if (id) clearTimeout(id);
+  setTimeout(() => {
+    getData(
+      `http://localhost:3000/blogs?q=${document.getElementById("query").value}`
+    );
+  }, 2000);
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+    <style>
+        #edit-form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+        }
+
+        input {
+            margin: 2px 0;
+            padding: 5px;
+        }
+
+        button {
+            width: 50%;
+            margin: 20px auto;
+            padding: 5px;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<div id="edit-form">
+    <input type="text" id="title" placeholder="Enter Title">
+    <input type="text" id="author" placeholder="Enter author">
+    <textarea name="" id="body" cols="30" rows="10" placeholder="Enter body"></textarea>
+    <input type="text" id="tags" placeholder="Enter tags">
+    <button id="edit">Confirm Edit</button>
+
+</div>
+
+<body>
+
+</body>
+
+</html>
+<script src="./scripts/edit.js"></script>

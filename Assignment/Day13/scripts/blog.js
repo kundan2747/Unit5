@@ -12,8 +12,8 @@ function displayData(element) {
   let tags = document.createElement("p");
   title.innerText = element.title;
   desc.innerText = element.body;
-  author.innerText = element.author;
-  tags.innerText = element.tags;
+  author.innerText = "Author : " + element.author;
+  tags.innerText = "Tags : " + element.tags;
   div.append(title, author, desc, tags);
   blog.append(div);
 }
