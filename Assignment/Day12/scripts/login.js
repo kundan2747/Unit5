@@ -12,6 +12,7 @@ function loginUser() {
       flag = false;
       if (userArr[i].password == pass1) {
         alert("login Successful");
+        localStorage.setItem("currUser", JSON.stringify(email1));
         window.location.href = "./index.html";
       } else {
         alert("invalid credentials");

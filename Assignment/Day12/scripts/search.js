@@ -40,3 +40,9 @@ function display(arr) {
     container.append(div);
   });
 }
+
+let currUser = JSON.parse(localStorage.getItem("currUser"));
+if (currUser) {
+  document.getElementById("login").innerHTML=`<p>${currUser}<p>`;
+  
+}
