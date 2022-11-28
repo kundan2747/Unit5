@@ -1,0 +1,12 @@
+#user-details {
+    display: flex;
+    margin: 20px auto;
+
+}
+img{
+    width: 200px
+    ;
+}
+#user-details div{
+    margin: 0 auto;
+}

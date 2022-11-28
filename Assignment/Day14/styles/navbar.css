@@ -1,0 +1,14 @@
+#navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: aqua;
+    color: blue;
+    margin: 10px 0px;
+
+}
+a{
+    text-decoration: none;
+    margin-left:-500px;
+}
