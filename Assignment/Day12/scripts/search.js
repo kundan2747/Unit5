@@ -43,6 +43,19 @@ function display(arr) {
 
 let currUser = JSON.parse(localStorage.getItem("currUser"));
 if (currUser) {
-  document.getElementById("login").innerHTML=`<p>${currUser}<p>`;
-  
+  document.getElementById("user").innerText = `${currUser}`;
+  document.getElementById("user").style.display = "block";
+  console.log(`${currUser}`);
+  let login = document.getElementById("login");
+  login.style.display = "none";
+  let logout = document.getElementById("logout");
+  logout.style.display = "block";
+  logout.addEventListener("click", () => {
+    logout.style.display = "none";
+    login.style.display = "block";
+
+    localStorage.removeItem("currUser");
+
+    window.location.reload();
+  });
 }
