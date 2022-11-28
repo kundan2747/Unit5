@@ -18,22 +18,25 @@ function getData() {
     })
     .then((result) => {
       var arr = result.meals;
-      var container = document.getElementById("container");
-      container.innerHTML = "";
-
-      if (!arr) container.innerHTML = "<h1>NO RECEIPE FOUND!</h1>";
+      console.log(arr);
+      if (arr) display(arr);
       else {
-        arr.forEach((element) => {
-          let div = document.createElement("div");
-          let image = document.createElement("img");
-          let title = document.createElement("h4");
-          let desc = document.createElement("p");
-          image.src = element.strMealThumb;
-          title.innerText = element.strMeal;
-          desc.innerText = element.strMeal + " , " + element.strArea;
-          div.append(image, title, desc);
-          container.append(div);
-        });
+        document.getElementById("container").innerText = "NO RECEIPE FOUND";
       }
     });
+}
+function display(arr) {
+  var container = document.getElementById("container");
+  container.innerHTML = "";
+  arr.forEach((element) => {
+    let div = document.createElement("div");
+    let image = document.createElement("img");
+    let title = document.createElement("h4");
+    let desc = document.createElement("p");
+    image.src = element.strMealThumb;
+    title.innerText = element.strMeal;
+    desc.innerText = element.strMeal + " , " + element.strArea;
+    div.append(image, title, desc);
+    container.append(div);
+  });
 }
