@@ -66,3 +66,35 @@ h1:last-of-type{
     margin: 0px 5px;
     
 }
+
+
+/*  */
+
+#sevendaysForecast {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap:0px;
+    text-align: center;
+    padding: 10px 150px;
+    margin-top: 40px;
+}
+#sevendaysForecast div {
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border-right: 1px solid rgba(0,0,0,0.2);;
+    
+
+} 
+img{
+    /* width: 50%; */
+    background-color: white;
+    border-radius: 50%;
+}
+#sevendaysForecast div:first-of-type{
+    border-bottom-left-radius: 20px;
+    
+}
+#sevendaysForecast div:last-of-type{
+    border-bottom-right-radius: 20px;
+}
